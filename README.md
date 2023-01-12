@@ -19,5 +19,5 @@ Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the 
 
 This software has been written in Matlab. Download the folder containing the code and add it to you Matlab path with 
 ```matlab
-addpath(PathtoFolder/TASH)
+addpath(PathtoFolder/TASH_complete)
 ```
