@@ -37,4 +37,24 @@ recon-all -subject Your_Subject -i Your_Subject_T1_image_file -all -qcache
 *	On the terminal Tcsh Shell, set in the folder where the TASH tcsh files are.
 *	Open the file TASH_DefineSubjects and define your folder
 
+## Running TASH
+Processing the data on the terminal Tcsh Shell by running the toolbox
+
+For Freesurfer <7 run 
+
+```batchfile
+./TASH_complete.csh 
+```
+
+For Freesurfer 7 run 
+
+```batchfile
+./TASH_completev7.csh
+```
+
+## Data output
+*	Two matlab files contains the numerical output of TASH (actual values for anatomical measures).
+*	 'TASH_measures_complete.mat' stores two matlab structs ('lh' and 'rh'), each one contains the anatomical measures (volume, suface area, mean thickness, etc...) considering all gyri of the hemisphere together. In this way, each matrix inside the struct (for example 'lh.volume') contains one value per line, while each line is each different inputted T1 image.
+*	'TASH_measures_complete_individual.mat' file has the same structure of the file mentioned above. However, in this case it stores the anatomical measures considering each gyrus individually. In this way, each matrix inside the struct (for example 'lh.volume') contains N values per line, where N is the number of transverse temporal gyri for each hemisphere. Then, the first column stores results for the first gyrus and so on (from anterior to posterior).
+*	About the images, the ones in the main folder displays all temporal transverse gyri per hemisphere, while the images in the subfolder 'individual' displays each gyrus individually per image.
 
