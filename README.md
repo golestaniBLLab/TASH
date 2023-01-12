@@ -21,3 +21,10 @@ This software has been written in Matlab. Download the folder containing the cod
 ```matlab
 addpath(PathtoFolder/TASH_Complete)
 ```
+
+### Requirements
+You must have the following setup:
+* Have MATLAB installed on your Linux platform (or Linux subsystem for Windows WLS).
+* Have Freesurfer (preferred version 5.3) installed on your Linux platform (or WLS).
+* On the OS X terminal Tcsh Shell, set in the folder where the file TASH_complete.csh is.
+* On the OS X terminal Tcsh Shell, type: chmod +x TASH_complete.csh
