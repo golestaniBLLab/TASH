@@ -1,4 +1,9 @@
 # TASH
+
+# setting folder TASH
+set TASH_DIR='' 
+
+# run!
 chmod +x TASH_tcsh.csh
 ./TASH_tcsh.csh
 matlab -nojvm -nodesktop -r 'try; TASH_segmentation; catch; end; quit'
