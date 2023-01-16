@@ -22,7 +22,11 @@ You must have the following setup:
 * Have MATLAB installed on your Linux platform (or Linux subsystem for Windows WLS).
 * Have Freesurfer (preferred version 5.3) installed on your Linux platform (or WLS).
 * On the OS X terminal Tcsh Shell, set in the folder where the file TASH_complete.csh is.
-* On the OS X terminal Tcsh Shell, type: chmod +x TASH_complete.csh and TASH_complete_7.csh
+* On the OS X terminal Tcsh Shell, type:
+```batchfile
+chmod +x TASH_complete.csh
+chmod +x TASH_complete_7.csh
+```
 
 ## Setting Up
 * Perform Freesurfer recon-all command on each of the T1 MR images.
