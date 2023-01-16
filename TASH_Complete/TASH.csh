@@ -1,7 +1,9 @@
 # TASH
 
 # setting folder TASH
-set TASH_DIR='' 
+set TASH_DIR='/home/deganog21/Desktop/TASH_projects/TASH_res/' 
+
+cd TASH_Complete
 
 # run!
 chmod +x TASH_tcsh.csh

@@ -1,5 +1,5 @@
 #!/bin/csh
 
 set filex = `ls -d $SUBJECTS_DIR{*/}`
-
+echo $filex
 set SUBJECTS = `basename --multiple $filex`

@@ -22,24 +22,24 @@ You must have the following setup:
 * Have MATLAB installed on your Linux platform (or Linux subsystem for Windows WLS).
 * Have Freesurfer (preferred version 5.3) installed on your Linux platform (or WLS).
 * On the OS X terminal Tcsh Shell, set in the folder where the file TASH_complete.csh is.
-* On the OS X terminal Tcsh Shell, type: chmod +x TASH_complete.csh
+* On the OS X terminal Tcsh Shell, type: chmod +x TASH_complete.csh and TASH_complete_7.csh
 
-This software has been written in Matlab. Download the folder containing the code and add it to you Matlab path with 
-```matlab
-addpath(PathtoFolder/TASH_Complete)
-```
-
-## Preprocessing
+## Setting Up
 * Perform Freesurfer recon-all command on each of the T1 MR images.
 ```batchfile
 recon-all -subject Your_Subject -i Your_Subject_T1_image_file -all -qcache
 ```
-*	On the terminal Tcsh Shell, set in the folder where the TASH tcsh files are.
-*	Open the file TASH_DefineSubjects and define your folder
+* IMPORTANT: the TASH scripts reads the folders automatically, so make sure that the only folders present in SUBJECTS_DIR are the one with the subject names (e.g. run TASH before other analysis methods like qdec etc.)
+*	Open the file TASH_complete(_v7) and define your TASH folder (where you want the output)
 
 ## Running TASH
-Processing the data on the terminal Tcsh Shell by running the toolbox
+You first need to open a TCSH terminal. Hence type in the terminal
 
+```batchfile
+tcsh
+```
+
+ALL done! You are ready to run TASH!
 For Freesurfer <7 run 
 
 ```batchfile
@@ -49,7 +49,7 @@ For Freesurfer <7 run
 For Freesurfer 7 run 
 
 ```batchfile
-./TASH_completev7.csh
+./TASH_complete_v7.csh
 ```
 
 ## Data output
