@@ -15,7 +15,7 @@ by Josue Luiz Dalboni da Rocha
 # Paper
 Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the Automated Segmentation of Heschl’s gyrus](https://www.nature.com/articles/s41598-020-60609-y). Sci Rep 10, 3887 (2020).
 
-## Installation
+# Installation
 
 ## Requirements
 You must have the following setup:
