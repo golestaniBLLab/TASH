@@ -22,7 +22,6 @@ Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the 
 You must have the following setup:
 * Have MATLAB installed on your Linux platform (or Linux subsystem for Windows WLS).
 * Have Freesurfer (preferred version 5.3) installed on your Linux platform (or WLS).
-* On the OS X terminal, set in the folder where the file TASH_complete.csh is (see how in the next section).
 * On the OS X terminal, type:
 ```batchfile
 chmod +x TASH_complete_v1.sh
@@ -41,7 +40,6 @@ export TASH_DIR=PathToYourFolder
 
 ## Running TASH
 You are ready to run TASH!
-For Freesurfer <7 run 
 
 ```batchfile
 ./TASH_complete_v1.sh [-h] [-m] [-v] [-t] [-g]
