@@ -1,7 +1,7 @@
 # TASH
 
 # setting folder TASH
-set TASH_DIR='SET_YOUR_FOLDER_HERE'  
+set TASH_DIR='/home/deganog21/Desktop/TASH_projects/TASH_res/'  
 
 cd TASH_Complete
 
