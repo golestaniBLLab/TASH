@@ -1,4 +1,4 @@
-function MCAI=MCAI()
+function MCAI=MCAI(gyrusN)
 %  _____ ______   ________  ________  ___     
 %|\   _ \  _   \|\   ____\|\   __  \|\  \    
 %\ \  \\\__\ \  \ \  \___|\ \  \|\  \ \  \   
@@ -23,6 +23,8 @@ TASHdir = getenv('TASH_DIR')
 
 D_load=fullfile(TASHdir,'complete');
 
+gyrusN
+
 mkdir(fullfile(D_load,'MCAI_results'))
 subjectsID = TASH_DefineSubjects;
     
@@ -30,7 +32,7 @@ for isub = 1:length(subjectsID)
     disp(['Running MCAI for subject:', subjectsID{isub}])
     
     try
-    imageTIFF=['HG_lh_',subjectsID{isub},'_cg1.tif'];
+    imageTIFF=['HG_lh_',subjectsID{isub},'_cg',gyrusN,'.tif'];
     fname = fullfile(D_load,'individual','lh',imageTIFF);
     tash = imread(fname);
     %imshow(tash(:,:,1)==9&tash(:,:,2)==9);
@@ -53,7 +55,7 @@ for isub = 1:length(subjectsID)
     trace=bwboundaries(hg);
     f=figure('visible','off');
     plot(trace{1,1}(:,2),-trace{1,1}(:,1),'bo')
-    plot_file=[D_load,'/MCAI_results/MCAI_TASH_lh_boundary_',subjectsID{isub},'.jpg'];
+    plot_file=[D_load,'/MCAI_results/MCAI_TASH_lh_boundary_',subjectsID{isub},'g',gyrusN,'.jpg'];
     saveas(f,plot_file)
     [MCAI.MCAI_lh_total(isub,:), MCAI.MCAI_lh_lat(isub,:), MCAI.MCAI_lh_med(isub,:), 		   MCAI.MCAI_lh_ant(isub,:), MCAI.MCAI_lh_post(isub,:), MCAI.MCAI_lh_antlat(isub,:), MCAI.MCAI_lh_latpost(isub,:), MCAI.MCAI_lh_postmed(isub,:), MCAI.MCAI_lh_medant(isub,:), MCAI.MCAI_8_antlat_lh(isub,:), MCAI.MCAI_8_latant_lh(isub,:), MCAI.MCAI_8_latpost_lh(isub,:), MCAI.MCAI_8_postlat_lh(isub,:), MCAI.MCAI_8_postmed_lh(isub,:), MCAI.MCAI_8_medpost_lh(isub,:), MCAI.MCAI_8_medant_lh(isub,:), MCAI.MCAI_8_antmed_lh(isub,:)] = MCAI_directed(hg,'lh');
     catch ME
@@ -64,7 +66,7 @@ for isub = 1:length(subjectsID)
     end
     
     try
-    imageTIFF=['HG_rh_',subjectsID{isub},'_cg1.tif'];
+    imageTIFF=['HG_rh_',subjectsID{isub},'_cg',gyrusN,'.tif'];
     fname = fullfile(D_load,'individual','rh',imageTIFF);
     tash = imread(fname);
     %imshow(tash(:,:,1)==9&tash(:,:,2)==9);
@@ -87,7 +89,7 @@ for isub = 1:length(subjectsID)
     trace=bwboundaries(hg);
     f=figure('visible','off');
     plot(trace{1,1}(:,2),-trace{1,1}(:,1),'bo')
-    plot_file=[D_load,'/MCAI_results/MCAI_TASH_rh_boundary_',subjectsID{isub},'.jpg'];
+    plot_file=[D_load,'/MCAI_results/MCAI_TASH_rh_boundary_',subjectsID{isub},'g',gyrusN,'.jpg'];
     saveas(f,plot_file)
     [MCAI.MCAI_rh_total(isub,:), MCAI.MCAI_rh_lat(isub,:), MCAI.MCAI_rh_med(isub,:), MCAI.MCAI_rh_ant(isub,:), MCAI.MCAI_rh_post(isub,:), MCAI.MCAI_rh_antlat(isub,:), MCAI.MCAI_rh_latpost(isub,:), MCAI.MCAI_rh_postmed(isub,:), MCAI.MCAI_rh_medant(isub,:), MCAI.MCAI_8_antlat_rh(isub,:), MCAI.MCAI_8_latant_rh(isub,:), MCAI.MCAI_8_latpost_rh(isub,:), MCAI.MCAI_8_postlat_rh(isub,:), MCAI.MCAI_8_postmed_rh(isub,:), MCAI.MCAI_8_medpost_rh(isub,:), MCAI.MCAI_8_medant_rh(isub,:), MCAI.MCAI_8_antmed_rh(isub,:)] = MCAI_directed(hg,'rh');
     catch
@@ -99,7 +101,7 @@ for isub = 1:length(subjectsID)
 
 end
 
-save([D_load,'/MCAI_results/MCAI_TASH_complete_res.mat'],'MCAI')
+save([D_load,'/MCAI_results/MCAI_TASH_complete_g',gyrusN,'_res.mat'],'MCAI')
 
 %% generating tables for dominant direction - by GD
 
@@ -133,7 +135,7 @@ end
 T = [array2table(subjectsID'),array2table(tempoTable)];
 T.Properties.VariableNames = LABELS;
 
-writetable(T,[D_load,'/MCAI_results/MCAI_table.csv'])
+writetable(T,[D_load,'/MCAI_results/MCAI_table_g',gyrusN,'.csv'])
 
 
 
