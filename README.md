@@ -47,7 +47,7 @@ For Freesurfer <7 run
 ```
 With:
 * [h] Helper funtion
-* [m] Flag if you want to run MCAI as well or not. Default no.
+* [m] Value to run also the MCAI analysis. 0 means no running MCAI, 1 means MCAI AND TASH, 2 means ONLY MCAI. IMPORTANT: to run MCAI with flag == 2 it means that, at some point, TASH was run on the dataset of interest.  Default set to 0 no MCAI\n
 * [g] Which gyrus you want MCAI to run on [1-2-3 etc]. Default 1.
 * [v] The Freesurfer version you used. Available 5, 6 or 7 (the version updates like .2 or .3 are not important). Default 7.
 * [t] Type of table you want to get. If 1, the output tables will be based only on TASH. If 2, morphological stats are obtained from other regions in the brain (ROI - Destrieux Atlas). Default 2.
