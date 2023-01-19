@@ -115,6 +115,7 @@ fi
 if (( $Fmcai > 0 )); then
   echo "Running MCAI"
   matlab -nodesktop -r "try; MCAI('$gyrus'); catch; end; quit"
+  #matlab -r "try; MCAI('$gyrus'); catch; end; quit"
 fi
 
 
