@@ -65,7 +65,7 @@ The output in PathToYourFolder will contain TASH segmentation, comprehensive tab
 | *Schematic diagram illustrating the different steps of TASH* |
 
 <!--- | ![MCAI.jpg](https://github.com/golestaniBBLab/TASH/blob/main/images/Github_figure_MCAI.png) | --->
-| <img src=(https://github.com/golestaniBBLab/TASH/blob/main/images/Github_figure_MCAI.png) width="100" height="100"> |
+| <img src="https://github.com/golestaniBBLab/TASH/blob/main/images/Github_figure_MCAI.png" width="300" height="300"> |
 |:--:| 
 | *The amplitude index of each concavity is the local amplitude (‘a’) of the respective concavity (i.e. maximum perpendicular displacement between the basis (‘b’) and the contour of the underlying concavity of the gyrus divided by the global maximum length of the gyrus (‘L’)). ‘L’ is an estimate of overall size of the gyrus, while ‘a’ and ‘b’ are computed for each concavity.* |
 
