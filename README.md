@@ -14,7 +14,7 @@ by Josue Luiz Dalboni da Rocha
 mantained by Giulio Degano
 
 # Paper
-TASH - Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the Automated Segmentation of Heschl’s gyrus](https://www.nature.com/articles/s41598-020-60609-y). Sci Rep 10, 3887 (2020).
+TASH - Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the Automated Segmentation of Heschl’s gyrus](https://www.nature.com/articles/s41598-020-60609-y). Sci Rep 10, 3887 (2020).\
 MCAI - Multivariate Concavity Amplitude Index (MCAI) for characterizing Heschl’s gyrus shape. Josue Luiz Dalboni da Rocha, Olga Kepinska, Peter Schneider, Jan Benner, Giulio Degano, Letitia Schneider and Narly Golestani.
 
 # Installation
