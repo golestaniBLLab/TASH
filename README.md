@@ -36,23 +36,37 @@ recon-all -subject Your_Subject -i Your_Subject_T1_image_file -all -qcache
 * IMPORTANT: the TASH scripts reads the folders automatically, so make sure that **the only folders present in SUBJECTS_DIR are the one with the subject names** (e.g. run TASH before other analysis methods like qdec etc.)
 *	Define your output TASH folder as:
 ```batchfile
-export TASH_DIR=PathToYourFolder
+export TASH_DIR=PathToYourFolder/
 ```
+The folder in PathToYourFolder needs to be created beforhand by the user.
 
 ## Running TASH
 You are ready to run TASH!
 
 ```batchfile
-./TASH_complete_v1.sh [-h] [-m] [-v] [-t] [-g]
+./TASH_complete_v1.sh [-h] [-m] [-v] [-g] [-t] 
 ```
 With:
 * [h] Helper funtion
 * [m] Value to run also the MCAI analysis. 0 means no running MCAI, 1 means MCAI AND TASH, 2 means ONLY MCAI. IMPORTANT: to run MCAI with flag == 2 it means that, at some point, TASH was run on the dataset of interest.  Default set to 0 no MCAI\n
-* [g] Which gyrus you want MCAI to run on [1-2-3 etc]. Default 1.
+* [g] Which gyrus you want MCAI to run on [1-2-3 etc]. MCAI can only be run for 1 gyry at the time. Default 1.
 * [v] The Freesurfer version you used. Available 5, 6 or 7 (the version updates like .2 or .3 are not important). Default 7.
-* [t] Type of table you want to get. If 1, the output tables will be based only on TASH. If 2, morphological stats are obtained from other regions in the brain (ROI - Destrieux Atlas). Default 2.
+* [t] Type of table you want to get. If 1, the output tables will be based only on TASH. If 2, morphological stats are obtained from other regions in the brain (ROI - Destrieux Atlas). Default 2.\
 
+IMPORTANT. None of the flags are mandatory but they all have a default value. This means that if one runs the code:
+```batchfile
+./TASH_complete_v1.sh
+```
+The output in PathToYourFolder will contain TASH segmentation, comprehensive tables with stats obtained from Destrieux Atlas and MCAI values for the first gyrus.
 
+## Details
+| ![TASH.jpg](https://github.com/golestaniBBLab/TASH/blob/main/images/Github_Figure_TASH.png) | 
+|:--:| 
+| *Schematic diagram illustrating the different steps of TASH* |
+
+| ![MCAI.jpg](https://github.com/golestaniBBLab/TASH/blob/main/images/Github_figure_MCAI.png) | 
+|:--:| 
+| *The amplitude index of each concavity is the local amplitude (‘a’) of the respective concavity (i.e. maximum perpendicular displacement between the basis (‘b’) and the contour of the underlying concavity of the gyrus divided by the global maximum length of the gyrus (‘L’)). ‘L’ is an estimate of overall size of the gyrus, while ‘a’ and ‘b’ are computed for each concavity.* |
 
 ## Data output
 *	Two matlab files contains the numerical output of TASH (actual values for anatomical measures).
