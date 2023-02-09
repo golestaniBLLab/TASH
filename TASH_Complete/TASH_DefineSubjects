@@ -1,5 +1,33 @@
 #!/bin/csh
 
 set filex = `ls -d $SUBJECTS_DIR{*/}`
-echo $filex
-set SUBJECTS = `basename --multiple $filex`
+#echo $filex
+set SUBJECTSold = `basename --multiple $filex`
+
+set catchFold = fsaverage
+@ cc = 1
+foreach i ($SUBJECTSold)
+    if ($i == $catchFold) then
+    echo "found fsaverage folder... removing!"
+    set idxFs = $cc
+    endif
+    @ cc++
+end
+
+if ( $?idxFs ) then
+ chmod +x GD_removeIdx_fsaverage.csh
+ source ./GD_removeIdx_fsaverage.csh $idxFs
+ #echo $SUBJECTS
+else
+ set SUBJECTS = ($SUBJECTSold)
+endif
+
+
+
+
+
+
+
+
+
+
