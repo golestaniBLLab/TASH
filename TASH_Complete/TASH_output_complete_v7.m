@@ -4,14 +4,14 @@ line=61;
 [lh,rh]=TASH_Measures_c(Dir,[],[],line)
 fname = fullfile(Dsave,['TASH_measures_complete.mat'])
 save(fname,'lh','rh')
-[lh,rh]=TASH_Measures_c1(Dir,[],[],line)
+[lh,rh]=TASH_Measures_c1(Dir,[],[],line);
 try
-    [lh,rh]=TASH_Measures_c2(Dir,lh,rh,line)
-    [lh,rh]=TASH_Measures_c3(Dir,lh,rh,line)
-    [lh,rh]=TASH_Measures_c4(Dir,lh,rh,line)
-    [lh,rh]=TASH_Measures_c5(Dir,lh,rh,line)
-    [lh,rh]=TASH_Measures_c6(Dir,lh,rh,line)
-    [lh,rh]=TASH_Measures_c7(Dir,lh,rh,line)
+    [lh,rh]=TASH_Measures_c2(Dir,lh,rh,line);
+    [lh,rh]=TASH_Measures_c3(Dir,lh,rh,line);
+    [lh,rh]=TASH_Measures_c4(Dir,lh,rh,line);
+    [lh,rh]=TASH_Measures_c5(Dir,lh,rh,line);
+    [lh,rh]=TASH_Measures_c6(Dir,lh,rh,line);
+    [lh,rh]=TASH_Measures_c7(Dir,lh,rh,line);
     %[lh,rh]=TASH_Measures_c8(Dir,lh,rh,line)
     %[lh,rh]=TASH_Measures_c9(Dir,lh,rh,line)
     %[lh,rh]=TASH_Measures_c10(Dir,lh,rh,line)
