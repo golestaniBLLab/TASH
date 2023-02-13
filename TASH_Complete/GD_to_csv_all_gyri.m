@@ -56,6 +56,20 @@ if val>1
         for j=1:length(HEMI)
             Ttemp=readtable(fullfile(Dsave,['qdec_',measuresAparc{i},'_',HEMI{j},'_Destrieux.txt']));
             Ttemp = renamevars(Ttemp,[HEMI{j},'_aparc_a2009s_',measuresAparc{i}],'subject');
+            
+            
+            % converting name of subects to strings
+            cColumn = num2cell(Ttemp{:, 'subject'});
+            if isa(cColumn{1},'double')
+                sColumn = cellfun(@(x) num2str(x), cColumn, 'UniformOutput', false);
+            else
+                sColumn = cellfun(@(x) string(x), cColumn, 'UniformOutput', false);
+            end
+            st = table(sColumn, 'VariableNames', {'subject'});
+            Ttemp(:, 'subject') = [];
+            Ttemp = [st, Ttemp];
+            
+            
             T = join(T,Ttemp);
         end
     end
@@ -66,6 +80,18 @@ if val>1
         
         Ttemp=readtable(fullfile(Dsave,['qdec_',measuresAseg{i},'_asegstat.txt']));
         Ttemp = renamevars(Ttemp,['Measure_',measuresAseg{i}],'subject');
+        
+        % converting name of subects to strings
+        cColumn = num2cell(Ttemp{:, 'subject'});
+        if isa(cColumn{1},'double')
+            sColumn = cellfun(@(x) num2str(x), cColumn, 'UniformOutput', false);
+        else
+            sColumn = cellfun(@(x) string(x), cColumn, 'UniformOutput', false);
+        end
+        st = table(sColumn, 'VariableNames', {'subject'});
+        Ttemp(:, 'subject') = [];
+        Ttemp = [st, Ttemp];
+        
         T = join(T,Ttemp);
         
     end

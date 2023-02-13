@@ -7,6 +7,15 @@
 Dload=$SUBJECTS_DIR*/
 
 listFold=($(ls -d $Dload | xargs -n 1 basename))
+for (( i=0; i<${#listFold[@]}; i++ )); do 
+    #echo ${listFold[i]}
+    if [[ ${listFold[i]} = "fsaverage" ]]; then
+    	echo 'Found fsaverage' 
+        listFold=( "${listFold[@]:0:$i}" "${listFold[@]:$((i + 1))}" )
+        i=$((i - 1))
+    fi
+done
+
 vv=${listFold[@]}
 
 measures=('volume' 'Area_mm2' 'nvoxels' 'nvertices' 'mean' 'std' 'snr' 'max')

@@ -51,7 +51,9 @@ With:
 * [m] Value to run also the MCAI analysis. 0 means no running MCAI, 1 means MCAI AND TASH, 2 means ONLY MCAI. IMPORTANT: to run MCAI with flag == 2 it means that, at some point, TASH was run on the dataset of interest.  Default set to 0 no MCAI\n
 * [g] Which gyrus you want MCAI to run on [1-2-3 etc]. MCAI can only be run for 1 gyry at the time. Default 1.
 * [v] The Freesurfer version you used. Available 5, 6 or 7 (the version updates like .2 or .3 are not important). Default 7.
+* [s] section of TASH that you want to run. 0 runs all the steps. 1 runs the stats and the plotting (need to have the tash segmentations done). 2 gets the cvs tables. Default 0.
 * [t] Type of table you want to get. If 1, the output tables will be based only on TASH. If 2, morphological stats are obtained from other regions in the brain (ROI - Destrieux Atlas). Default 2.\
+* [p] if you place this flag the MCAI plots will be in output. Default no plot as it would take too much space.
 
 IMPORTANT. None of the flags are mandatory but they all have a default value. This means that if one runs the code:
 ```batchfile
