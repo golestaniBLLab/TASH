@@ -44,7 +44,7 @@ The folder in PathToYourFolder needs to be created beforhand by the user.
 You are ready to run TASH!
 
 ```batchfile
-./TASH_complete_v1.sh [-h] [-m] [-v] [-g] [-t] 
+./TASH_complete_v1.sh [-h] [-m] [-v] [-g] [-t] [-s] [-p]
 ```
 With:
 * [h] Helper funtion
