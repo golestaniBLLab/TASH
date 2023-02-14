@@ -63,7 +63,7 @@ if val>1
             if isa(cColumn{1},'double')
                 sColumn = cellfun(@(x) num2str(x), cColumn, 'UniformOutput', false);
             else
-                sColumn = cellfun(@(x) string(x), cColumn, 'UniformOutput', false);
+                sColumn = cellfun(@(x) char(x), cColumn, 'UniformOutput', false);
             end
             st = table(sColumn, 'VariableNames', {'subject'});
             Ttemp(:, 'subject') = [];
@@ -86,7 +86,7 @@ if val>1
         if isa(cColumn{1},'double')
             sColumn = cellfun(@(x) num2str(x), cColumn, 'UniformOutput', false);
         else
-            sColumn = cellfun(@(x) string(x), cColumn, 'UniformOutput', false);
+            sColumn = cellfun(@(x) char(x), cColumn, 'UniformOutput', false);
         end
         st = table(sColumn, 'VariableNames', {'subject'});
         Ttemp(:, 'subject') = [];

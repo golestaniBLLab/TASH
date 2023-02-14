@@ -34,9 +34,9 @@ else
     gyForCy{1,1}=gyrusN;
 end
 
-noPlot=0
+noPlot=0;
 
-if flagPlot=='true'
+if strcmp(flagPlot,'true')
   noPlot=1; 
   disp('Plotting MCAI shapes')
 end
