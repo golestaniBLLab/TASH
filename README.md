@@ -74,7 +74,17 @@ The output in PathToYourFolder will contain TASH segmentation, comprehensive tab
 
 ### Notes on thresholds selection
 If you have a dataset with adults T1s, the thresholds to run TASH and MCAI have been already selected by us and they seem to work well enough. If you are working with children data, you will probably need to adapts some of the selection criteria for the clusters (e.g. in one of our previous work we lowered the minimum amount of vertex from 100 to 50 to take into account for smaller brains).
-
+Here and example of a possible mods for the cluster size threshold (in TASH_cluster_complete line 92)
+```Matlab
+     ic=0;
+     for vtx=1:size(vtxIdx,1)-99 %change 99 to smaller size like 50
+         this_cluster = find(clustered==vtx);
+         if length(this_cluster)>99 %change 99 to smaller size like 50
+             ic=ic+1;
+             cluster{ic}=vtxIdx(this_cluster);
+         end
+     end
+```
 ## Data output
 *	Two matlab files contains the numerical output of TASH (actual values for anatomical measures).
 *	 'TASH_measures_complete.mat' stores two matlab structs ('lh' and 'rh'), each one contains the anatomical measures (volume, suface area, mean thickness, etc...) considering all gyri of the hemisphere together. In this way, each matrix inside the struct (for example 'lh.volume') contains one value per line, while each line is each different inputted T1 image.
