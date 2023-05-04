@@ -15,7 +15,7 @@ mantained by Giulio Degano
 
 # Paper
 TASH - Dalboni da Rocha, J.L., Schneider, P., Benner, J. et al. [TASH: Toolbox for the Automated Segmentation of Heschl’s gyrus](https://www.nature.com/articles/s41598-020-60609-y). Sci Rep 10, 3887 (2020).\
-MCAI - Multivariate Concavity Amplitude Index (MCAI) for characterizing Heschl’s gyrus shape. Josue Luiz Dalboni da Rocha, Olga Kepinska, Peter Schneider, Jan Benner, Giulio Degano, Letitia Schneider and Narly Golestani.
+MCAI - [Multivariate Concavity Amplitude Index (MCAI) for characterizing Heschl’s gyrus shape.](https://www.sciencedirect.com/science/article/pii/S1053811923001982) Josue Luiz Dalboni da Rocha, Olga Kepinska, Peter Schneider, Jan Benner, Giulio Degano, Letitia Schneider and Narly Golestani.
 
 # Installation
 
@@ -50,7 +50,7 @@ With:
 * [h] Helper funtion
 * [m] Value to run also the MCAI analysis. 0 means no running MCAI, 1 means MCAI AND TASH, 2 means ONLY MCAI. IMPORTANT: to run MCAI with flag == 2 it means that, at some point, TASH was run on the dataset of interest.  Default set to 0 no MCAI\n
 * [g] Which gyrus you want MCAI to run on [1-2-3 etc]. MCAI can only be run for 1 gyry at the time. Default 1. You can also type 'all' option and a table for gyri from 1 to 7 will be created.
-* [v] The Freesurfer version you used. Available 5, 6 or 7 (the version updates like .2 or .3 are not important). Default 7.
+* [v] The Freesurfer version you used. Available 5, 6 or 7 (the version updates like .2 or .3 are not important). Default 7. IMPORTANT: this flags referes to the freesurfer version that is installed on the computer that will be used to run TASH/MCAI NOT the version that has been used to run freesurfer segmentation if these are different (e.g. large dataset segmented v6 like the UKBB but locally you have 7.2 installed ) 
 * [s] [0-1-2-3] section of TASH that you want to run. 0 runs all the steps. 1 skips the segmentation but runs the rest i.e. plots, stats extraction, save .mat and .csv (need to have the tash segmentations done). 2 runs the saving and the the tables extraction. (useful if you already got the tiff files and want to rerun the rest on a different folder for sanity checks).  3 gets ONLY the cvs tables. Default 0.
 * [t] Type of table you want to get. If 1, the output tables will be based only on TASH. If 2, morphological stats are obtained from other regions in the brain (ROI - Destrieux Atlas). Default 2.\
 * [p] if you place this flag the MCAI plots will be in output. Default no plot as it would take too much space.
@@ -62,6 +62,7 @@ IMPORTANT. None of the flags are mandatory but they all have a default value. Th
 The output in PathToYourFolder will contain TASH segmentation, comprehensive tables with stats obtained from Destrieux Atlas and MCAI values for the first gyrus.
 
 ## Details
+
 | ![TASH.jpg](https://github.com/golestaniBBLab/TASH/blob/main/images/Github_Figure_TASH.png) | 
 |:--:| 
 | *Schematic diagram illustrating the different steps of TASH* |
@@ -70,6 +71,9 @@ The output in PathToYourFolder will contain TASH segmentation, comprehensive tab
 | <img src="https://github.com/golestaniBBLab/TASH/blob/main/images/Github_figure_MCAI.png" width="300" height="300"> |
 |:--:| 
 | *The amplitude index of each concavity is the local amplitude (‘a’) of the respective concavity (i.e. maximum perpendicular displacement between the basis (‘b’) and the contour of the underlying concavity of the gyrus divided by the global maximum length of the gyrus (‘L’)). ‘L’ is an estimate of overall size of the gyrus, while ‘a’ and ‘b’ are computed for each concavity.* |
+
+### Notes on thresholds selection
+If you have a dataset with adults T1s, the thresholds to run TASH and MCAI have been already selected by us and they seem to work well enough. If you are working with children data, you will probably need to adapts some of the selection criteria for the clusters (e.g. in one of our previous work we lowered the minimum amount of vertex from 100 to 50 to take into account for smaller brains).
 
 ## Data output
 *	Two matlab files contains the numerical output of TASH (actual values for anatomical measures).
