@@ -73,7 +73,7 @@ The output in PathToYourFolder will contain TASH segmentation, comprehensive tab
 | *The amplitude index of each concavity is the local amplitude (‘a’) of the respective concavity (i.e. maximum perpendicular displacement between the basis (‘b’) and the contour of the underlying concavity of the gyrus divided by the global maximum length of the gyrus (‘L’)). ‘L’ is an estimate of overall size of the gyrus, while ‘a’ and ‘b’ are computed for each concavity.* |
 
 ### Notes on thresholds selection
-If you have a dataset with adults T1s, the thresholds to run TASH and MCAI have been already selected by us and they seem to work well enough. If you are working with children data, you will probably need to adapts some of the selection criteria for the clusters (e.g. in one of our previous work we lowered the minimum amount of vertex from 100 to 50 to take into account for smaller brains).
+If you have a dataset with adult T1s, the thresholds to run TASH and MCAI have been already selected by us and they seem to work well enough. If you are working with children data, you will probably need to adapt some of the selection criteria for the clusters (e.g. in one of our previous works we lowered the minimum amount of vertex from 100 to 50 to take into account for smaller brains).
 Here and example of possible mods for the cluster size threshold (in TASH_cluster_complete line 92)
 ```Matlab
      ic=0;
