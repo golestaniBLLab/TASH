@@ -74,7 +74,7 @@ The output in PathToYourFolder will contain TASH segmentation, comprehensive tab
 
 ### Notes on thresholds selection
 If you have a dataset with adults T1s, the thresholds to run TASH and MCAI have been already selected by us and they seem to work well enough. If you are working with children data, you will probably need to adapts some of the selection criteria for the clusters (e.g. in one of our previous work we lowered the minimum amount of vertex from 100 to 50 to take into account for smaller brains).
-Here and example of a possible mods for the cluster size threshold (in TASH_cluster_complete line 92)
+Here and example of possible mods for the cluster size threshold (in TASH_cluster_complete line 92)
 ```Matlab
      ic=0;
      for vtx=1:size(vtxIdx,1)-99 %change 99 to smaller size like 50
