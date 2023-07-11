@@ -49,7 +49,7 @@ writetable(T,[Dsave,'TASH_only_table.csv'])
 
 %% reading from qdec
 if val>1
-    measuresAparc={'volume', 'thickness', 'thicknessstd', 'meancurv', 'gauscurv', 'foldind', 'curvind'};
+    measuresAparc={'area', 'volume', 'thickness', 'thicknessstd', 'meancurv', 'gauscurv', 'foldind', 'curvind'};
     HEMI={'lh','rh'};
     
     for i = 1:length(measuresAparc)
