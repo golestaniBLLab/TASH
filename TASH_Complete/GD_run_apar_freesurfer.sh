@@ -19,7 +19,7 @@ done
 
 vv=${listFold[@]}
 
-measures=(volume thickness thicknessstd meancurv gauscurv foldind curvind)
+measures=(area volume thickness thicknessstd meancurv gauscurv foldind curvind)
 HEMI=(lh rh)
 
 for i in "${measures[@]}"
