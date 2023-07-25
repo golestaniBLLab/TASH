@@ -1,7 +1,6 @@
 function GD_to_csv_all_gyri(val)
 
 [sub, Dir, Dsave] = TASH_DefineSubjects();
-%Dsave='/home/sitara22/data/team/sitara22/HCP_preprocessed/TASH_output/'
 
 % selecting the measure to use... here I am using all of them
 measure_toKeep={'Volume','Area','ThickAvg','ThickStd','MeanCurv','GausCurv','FoldInd','CurvInd'};
