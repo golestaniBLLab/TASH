@@ -57,7 +57,7 @@ else
   echo "TASH_DIR is set to '$TASH_DIR'"
 fi
 
-cd TASH_Complete
+cd TASH_MCAI_Complete
 
 if (( $Fmcai < 2 )); then
   
