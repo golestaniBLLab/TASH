@@ -58,7 +58,7 @@ With:
 
 IMPORTANT. None of the flags are mandatory but they all have a default value. This means that if one runs the code:
 ```batchfile
-./TASH_complete_v1.sh
+./TASH_MCAI_complete_v1
 ```
 The output in PathToYourFolder will contain TASH segmentation, comprehensive tables with stats obtained from Destrieux Atlas and MCAI values for the first gyrus.
 
