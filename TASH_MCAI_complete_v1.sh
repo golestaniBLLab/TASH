@@ -53,8 +53,17 @@ fi
 if [ -z ${TASH_DIR+x} ]; then 
   echo "TASH_DIR is unset. Plese set the TASH directory. See function helper"
   exit 1
-else 
-  echo "TASH_DIR is set to '$TASH_DIR'"
+else
+  subdirectory=$(realpath "$TASH_DIR")
+  directory=$(realpath "$SUBJECTS_DIR")
+  
+  if [[ $subdirectory == $directory* ]]; then
+    echo "$subdirectory is inside $directory... NOT allowed! Set TASH folder outside the freesurfer one"
+    exit 1
+  else 
+    echo "TASH_DIR is set to '$TASH_DIR'"
+  fi
+  
 fi
 
 cd TASH_MCAI_Complete
