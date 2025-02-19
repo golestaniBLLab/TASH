@@ -94,3 +94,8 @@ Here and example of possible mods for the cluster size threshold (in TASH_cluste
 *	For both matlab files a .csv table is also generated for TASH (and MCAI if selected). This makes it easier to transer the results to other data analysis software/programming languages for stats (e.g. R, Python etc.)
 *	The images in the main folder display all temporal transverse gyri per hemisphere, while the images in the subfolder 'individual' display each gyrus individually per image.
 
+## License  
+This project is licensed under the **CC BY-NC 4.0 License**.  
+You are free to use, modify, and share this code **for academic and research purposes only**.  
+**Commercial use is strictly prohibited**.  
+Full license text: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)  
